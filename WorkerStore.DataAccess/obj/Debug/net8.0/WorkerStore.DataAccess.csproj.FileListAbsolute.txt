@@ -1,0 +1,5 @@
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.csproj.AssemblyReference.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.AssemblyInfoInputs.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.AssemblyInfo.cs
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.csproj.CoreCompileInputs.cache

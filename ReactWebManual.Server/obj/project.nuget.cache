@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "kU1TUvomNn4VvuPqHM5QGy76ySkdSYlzFGfuwmnJlFilUm70P+fTy/EGlZHuOzobstSushSabGgkVPWlwoRrwA==",
+  "success": true,
+  "projectFilePath": "C:\\Romka\\Программирование\\testcifra\\ReactWebManual\\ReactWebManual.Server\\ReactWebManual.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.4\\microsoft.aspnetcore.spaproxy.8.0.4.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
