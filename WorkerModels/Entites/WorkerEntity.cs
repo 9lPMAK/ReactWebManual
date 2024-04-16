@@ -11,4 +11,3 @@ public class WorkerEntity
     public string Post { get; set; }
     public bool DriversLicense { get; set; }
 }
-

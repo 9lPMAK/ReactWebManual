@@ -12,8 +12,8 @@ using WorkerStore.DataAccess;
 namespace WorkerStore.DataAccess.Migrations
 {
     [DbContext(typeof(WorkerStoreDbContext))]
-    [Migration("20240416065010_Initial")]
-    partial class Initial
+    [Migration("20240416104736_Default")]
+    partial class Default
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace WorkerStore.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
