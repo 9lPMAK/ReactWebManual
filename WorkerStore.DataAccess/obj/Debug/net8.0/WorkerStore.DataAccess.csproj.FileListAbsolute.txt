@@ -3,3 +3,16 @@ C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.D
 C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.AssemblyInfoInputs.cache
 C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.AssemblyInfo.cs
 C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.csproj.CoreCompileInputs.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.sourcelink.json
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\WorkerStore.DataAccess.deps.json
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\WorkerStore.DataAccess.runtimeconfig.json
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\WorkerStore.DataAccess.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\WorkerStore.DataAccess.pdb
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\DataModels.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\bin\Debug\net8.0\DataModels.pdb
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerSt.675831D2.Up2Date
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\refint\WorkerStore.DataAccess.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.pdb
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\WorkerStore.DataAccess.genruntimeconfig.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerStore.DataAccess\obj\Debug\net8.0\ref\WorkerStore.DataAccess.dll

@@ -1,0 +1,12 @@
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.AssemblyInfoInputs.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.AssemblyInfo.cs
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.csproj.CoreCompileInputs.cache
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.sourcelink.json
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\bin\Debug\net8.0\DataModels.deps.json
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\bin\Debug\net8.0\DataModels.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\bin\Debug\net8.0\DataModels.pdb
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\refint\DataModels.dll
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\DataModels.pdb
+C:\Romka\Программирование\testcifra\ReactWebManual\WorkerModels\obj\Debug\net8.0\ref\DataModels.dll

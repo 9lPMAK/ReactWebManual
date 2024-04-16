@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactWebManual.Server", "Re
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactwebmanual.client", "reactwebmanual.client\reactwebmanual.client.esproj", "{2945E3B2-E3AE-4F49-9D04-D4736E192B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerStore.DataAccess", "WorkerStore.DataAccess\WorkerStore.DataAccess.csproj", "{893BB498-AA24-4AE0-B93C-C031C7AEE07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerStore.DataAccess", "WorkerStore.DataAccess\WorkerStore.DataAccess.csproj", "{893BB498-AA24-4AE0-B93C-C031C7AEE07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModels", "WorkerModels\DataModels.csproj", "{17528C5F-883D-4D70-B283-04C6BBB6F778}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{893BB498-AA24-4AE0-B93C-C031C7AEE07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893BB498-AA24-4AE0-B93C-C031C7AEE07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893BB498-AA24-4AE0-B93C-C031C7AEE07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17528C5F-883D-4D70-B283-04C6BBB6F778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17528C5F-883D-4D70-B283-04C6BBB6F778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17528C5F-883D-4D70-B283-04C6BBB6F778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17528C5F-883D-4D70-B283-04C6BBB6F778}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

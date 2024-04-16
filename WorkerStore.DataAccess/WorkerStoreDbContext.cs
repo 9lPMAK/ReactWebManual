@@ -1,16 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WorkerStore.DataAccess.Entites;
+﻿using DataModels.Entites;
+using Microsoft.EntityFrameworkCore;
 
-namespace WorkerStore.DataAccess
+namespace WorkerStore.DataAccess;
+public class WorkerStoreDbContext : DbContext
 {
-    public class WorkerStoreDbContext : DbContext
-    {
-        public WorkerStoreDbContext(DbContextOptions<WorkerStoreDbContext> options)
-            : base(options) 
-        {
-   
-        }
+    public DbSet<WorkerEntity> Workers { get; set; }
+    public DbSet<DivisionEntity> Divisions { get; set; }
 
-        public DbSet<WorkerEntity> Workers { get; set; }
+
+    public WorkerStoreDbContext(DbContextOptions options)
+        : base(options)
+    {
+        Database.Migrate();
     }
 }
