@@ -11,7 +11,8 @@ public class DivisionEntity
 
     public string Name { get; set; }
 
-    public DateTime? CreateDate { get; set; }
+    public DateTime CreateDate { get; set; } = DateTime.Now;
 
-    public string? Description { get; set; }
+    public string Description { get; set; } = string.Empty;
+
 }

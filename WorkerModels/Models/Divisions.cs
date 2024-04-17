@@ -1,18 +1,18 @@
 ﻿//namespace DataModels.Models;
 
-//public class Division
+//public class DivisionDTO
 //{
-//    public int Id { get; set; }
+//    public int? Id { get; set; }
 
 //    public int ParentID { get; set; }
 
 //    public string Name { get; set; }
 
-//    public DateTime DateCreate { get; set; }
+//    public DateTime? DateCreate { get; set; }
 
 //    public string Description { get; set; } = string.Empty;
 
-//    private Division(int id, int parentID, string parent, string name, DateTime dataCreate, string description)
+//    private Division(divi)
 //    {
 //        Id = id;
 //        ParentID = parentID;
