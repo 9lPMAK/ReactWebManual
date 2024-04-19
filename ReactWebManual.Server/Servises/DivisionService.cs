@@ -1,11 +1,12 @@
 ﻿using DataModels.Entites;
-using Microsoft.AspNetCore.Components.Web;
+using DataModels.Models;
+using ReactWebManual.Server.Interface;
 using WorkerStore.DataAccess;
-using static ReactWebManual.Server.Controllers.DivisionController;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ReactWebManual.Server.Servises;
 
-public class DivisionService
+public class DivisionService : IDivisionService
 {
     private readonly WorkerStoreDbContext _db;
 
@@ -17,20 +18,31 @@ public class DivisionService
     public List<DivisionEntity> GetAll()
      => _db.Divisions.ToList();
 
-    public bool Delete(int id)
+    public (bool, string) Remove(int id)
     {
         var division = _db.Divisions.FirstOrDefault(d => d.Id == id);
         if (division is null)
-            return false;
+            return (false, "ID не найден");
+
+        List<DivisionEntity> divisionChildCollec = _db.Divisions.Where(d => d.ParentID == id).ToList();
+        if (!divisionChildCollec.Any())
+            return (false, "Дочерние элементы не найдены");
+
+
+        for (int i = 0; i < divisionChildCollec.Count; i++)
+        {
+            DivisionEntity divisionChild = divisionChildCollec[i];
+            divisionChildCollec.AddRange(_db.Divisions.Where(d => d.ParentID == divisionChild.Id).ToList());
+            _db.Divisions.Remove(divisionChild);
+        }
 
         _db.Divisions.Remove(division);
         _db.SaveChanges();
-        return true;
+        return (true, null);
     }
 
     public (bool, List<string>) Add(DivisionDTO divisionRequest)
     {
-     
         var errors = Validate(divisionRequest);
 
         if (errors.Count > 0)
@@ -44,24 +56,17 @@ public class DivisionService
         };
 
         _db.Divisions.Add(result);
-        var isSucces = _db.SaveChanges();
+        _db.SaveChanges();
 
-      return (true, errors); 
+        return (true, errors);
     }
 
-    public (bool, List<string>) Edit(DivisionDTO divisionRequest) 
+    public (bool, List<string>) Update(DivisionDTO divisionRequest)
     {
-        List<string> errors = new();
-        if (divisionRequest is null)
-        {
-            errors.Add("Модель не передана");
-            return (false, errors);
-        }
-
-        errors.AddRange(Validate(divisionRequest));
+        var errors = Validate(divisionRequest);
 
         if (errors.Count > 0)
-            return (false,errors);
+            return (false, errors);
 
         var division = _db.Divisions.FirstOrDefault(x => x.Id == divisionRequest.ID);
         if (division is null)
@@ -77,10 +82,7 @@ public class DivisionService
         _db.Divisions.Update(division);
         _db.SaveChanges();
 
-        if (errors.Count > 0)
-            return (false, errors);
-
-        return (true, errors); ;
+        return (true, errors);
     }
 
     private List<string> Validate(DivisionDTO entity)
@@ -89,10 +91,12 @@ public class DivisionService
 
         var isValidName = _db.Divisions.FirstOrDefault(x => x.Name == entity.Name && x.Id != entity.ID);
         if (isValidName is not null)
-            errors.Add('Наименование не уникально');
+            errors.Add("Наименование не уникально");
+
+        var isValidParentID = _db.Divisions.FirstOrDefault(x => x.Id == entity.ParentID);
+        if (isValidParentID is null)
+            errors.Add("Id совпадает с ParentID");
 
         return errors;
     }
-
-    public record DivisionDTO(int? ID, int ParentID, DateTime? CreateDate, string Name, string Description);
 }

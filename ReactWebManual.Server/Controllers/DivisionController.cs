@@ -1,8 +1,8 @@
 ﻿using DataModels.Entites;
 using DataModels.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
-using WorkerStore.DataAccess;
+using ReactWebManual.Server.Interface;
+using ReactWebManual.Server.Servises;
 
 namespace ReactWebManual.Server.Controllers;
 
@@ -10,89 +10,49 @@ namespace ReactWebManual.Server.Controllers;
 [ApiController]
 public class DivisionController : ControllerBase
 {
-    private readonly WorkerStoreDbContext _db;
-    public DivisionController(WorkerStoreDbContext db)
+    private readonly IDivisionService _divisionService;
+    public DivisionController(IDivisionService divisionservice)
     {
-        _db = db;
-    }
-    [HttpGet]
-    public async Task<ActionResult<List<DivisionEntity>>> Get()
-    {
-        return _db.Divisions.ToList();
+        _divisionService = divisionservice;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<List<DivisionEntity>>> GetAll()
+        => Ok(_divisionService.GetAll());
+
     [HttpDelete("{id}")]
-    public async Task<ActionResult> Delete(int id)
+    public async Task<ActionResult> Remove(int id)
     {
-        DivisionEntity division = _db.Divisions.FirstOrDefault(d => d.Id == id);
-        if (division == null)
-        {
-            return NotFound();
-        }
-        _db.Divisions.Remove(division);
-        await _db.SaveChangesAsync();
-        return Ok();
+        var resultDelete = _divisionService.Remove(id);
+        if (!resultDelete.IsSuccess)
+            return BadRequest(resultDelete);
+
+        return Ok(resultDelete);
     }
 
     [HttpPost]
-    public async Task<ActionResult<DivisionEntity>> Post(DivisionDTO divisionRequest)
+    public async Task<ActionResult<DivisionEntity>> Add(DivisionDTO divisionRequest)
     {
         if (divisionRequest is null)
             return BadRequest();
 
-        var errors = Validate(divisionRequest);
+        var resultPost = _divisionService.Add(divisionRequest);
+        if (!resultPost.IsSuccess)
+            return BadRequest(resultPost);
 
-        if (errors.Count > 0)
-            return BadRequest(errors);
-
-        var result = new DivisionEntity()
-        {
-            Id = 0,
-            ParentID = divisionRequest.ParentID,
-            Name = divisionRequest.Name,
-            Description = divisionRequest.Description,
-        };
-
-        _db.Divisions.Add(result);
-        var newDivision = await _db.SaveChangesAsync();
-        return Ok(newDivision);
+        return Ok(resultPost);
     }
 
     [HttpPut]
-    public async Task<ActionResult<DivisionEntity>> Put(DivisionDTO divisionRequest)
+    public async Task<ActionResult<DivisionEntity>> Update(DivisionDTO divisionRequest)
     {
         if (divisionRequest is null)
             return BadRequest();
 
-        var errors = Validate(divisionRequest);
+        var resultPut = _divisionService.Update(divisionRequest);
+        if (!resultPut.IsSuccess)
+            return BadRequest(resultPut);
 
-        if (errors.Count > 0)
-            return BadRequest(errors);
-
-        var division = _db.Divisions.FirstOrDefault(x => x.Id == divisionRequest.ID);
-        if (division is null)
-            return NotFound();
-
-        division.Name = divisionRequest.Name;
-        division.ParentID = divisionRequest.ParentID;
-        division.Description = divisionRequest.Description;
-
-        _db.Divisions.Update(division);
-
-        var newDivision = await _db.SaveChangesAsync();
-        return Ok(newDivision);
+        return Ok(resultPut);
     }
-
-    public List<string> Validate(DivisionDTO entity)
-    {
-        var errors = new List<string>();
-
-        var isValidName = _db.Divisions.FirstOrDefault(x => x.Name == entity.Name && x.Id != entity.ID);
-        if (isValidName is not null)
-            errors.Add('Наименование не уникально');
-
-        return errors;
-    }
-
-    public record DivisionDTO(int? ID, int ParentID, DateTime? CreateDate, string Name, string Description);
 }

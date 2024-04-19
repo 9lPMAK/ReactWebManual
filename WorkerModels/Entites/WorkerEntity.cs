@@ -1,13 +1,16 @@
-﻿namespace DataModels.Entites;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DataModels.Entites;
 
 public class WorkerEntity
 {
-    public Guid Id { get; set; }
+    [Key]
+    public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string PatronymicName { get; set; }
-    public string DR { get; set; }
+    public string MiddleName { get; set; } = string.Empty;
+    public DateTime DateBithday { get; set; }
     public string Sex { get; set; }
     public string Post { get; set; }
-    public bool DriversLicense { get; set; }
+    public bool DriversLicense { get; set; } = false;
 }
