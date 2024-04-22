@@ -8,9 +8,9 @@ public class WorkerEntity
     public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string MiddleName { get; set; } = string.Empty;
+    public string MiddleName { get; set; }
     public DateTime DateBithday { get; set; }
     public string Sex { get; set; }
     public string Post { get; set; }
-    public bool DriversLicense { get; set; } = false;
+    public bool DriversLicense { get; set; } 
 }

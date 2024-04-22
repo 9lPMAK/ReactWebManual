@@ -16,6 +16,8 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<IScopedService, ScopedService>();
 //builder.Services.AddSingleton<ISingletonService, SingletonService>();
 builder.Services.AddTransient<IDivisionService, DivisionService>();
+builder.Services.AddTransient<IWorkerService, WorkerService>();
+
 
 var app = builder.Build();
 
