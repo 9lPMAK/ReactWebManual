@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDataAccess(builder.Configuration.GetConnectionString("DefaultConnection"));
 
+builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -20,6 +21,13 @@ builder.Services.AddTransient<IWorkerService, WorkerService>();
 
 
 var app = builder.Build();
+
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials()
+); // allow credentials
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
