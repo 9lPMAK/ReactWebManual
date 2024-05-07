@@ -1,0 +1,31 @@
+.ReactModal__Content--after-open{
+
+    width: 50vw;
+    height: 50vw;
+}
+
+.modalContentHeader{
+    display: flex;
+    justify-content: stretch;
+    width: max-content;
+}
+
+.modalContentForm{
+    margin-left: 4vw;
+}
+
+.modalContentHeaderButton{
+    margin-left: 5vw;
+}
+
+.modalContentHeaderButton{
+    width: 113px;
+    height: 42px;
+    background-color: red;
+    float: right;
+}
+
+.modalContentButton{
+    margin: 1vw;
+    float: right;
+}

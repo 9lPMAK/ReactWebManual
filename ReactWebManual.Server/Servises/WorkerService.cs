@@ -1,36 +1,27 @@
 ﻿using DataModels.Entites;
 using DataModels.Models;
-using Microsoft.Extensions.Hosting;
-using Microsoft.VisualBasic;
+using Microsoft.EntityFrameworkCore;
 using ReactWebManual.Server.Interface;
 using WorkerStore.DataAccess;
 
 namespace ReactWebManual.Server.Servises;
 
-public class WorkerService : IWorkerService
+public class WorkerService(WorkerStoreDbContext db) : IWorkerService
 {
-    private readonly WorkerStoreDbContext _db;
+    public Task<List<WorkerEntity>> GetAll() => db.Workers.ToListAsync();
 
-	public WorkerService(WorkerStoreDbContext db)
+	public async Task<(bool, string?)> Remove(int id)
 	{
-        _db = db;
-	}
-
-	public List<WorkerEntity> GetAll()
-		=> _db.Workers.ToList();
-
-	public (bool, string) Remove(int id)
-	{
-        var worker = _db.Workers.FirstOrDefault(d => d.Id == id);
+        var worker = await db.Workers.FirstOrDefaultAsync(d => d.Id == id);
         if (worker is null)
             return (false, "ID не найден");
 
-        _db.Workers.Remove(worker);
-        _db.SaveChanges();
+        db.Workers.Remove(worker);
+        await db.SaveChangesAsync();
         return (true, null);
     }
 
-    public (bool, List<string>) Add(WorkerDTO workerRequest)
+    public async Task<(bool, List<string>)> Add(WorkerDTO workerRequest)
     {
         var errors = Validate(workerRequest);
 
@@ -48,21 +39,20 @@ public class WorkerService : IWorkerService
             DriversLicense = workerRequest.DriversLicense,
         };
 
-        _db.Workers.Add(result);
-        _db.SaveChanges();
+        db.Workers.Add(result);
+        await db.SaveChangesAsync();
 
         return (true, errors);
     }
 
-    public (bool, List<string>) Update(WorkerDTO workerRequest)
+    public async Task<(bool, List<string>)> Update(WorkerDTO workerRequest)
     {
-
         var errors = Validate(workerRequest);
 
         if (errors.Count > 0)
             return (false, errors);
 
-        var worker = _db.Workers.FirstOrDefault(x => x.Id == workerRequest.ID);
+        var worker = await db.Workers.FirstOrDefaultAsync(x => x.Id == workerRequest.ID);
         if (worker is null)
         {
             errors.Add("не пришла модель из БД по ID");
@@ -73,12 +63,12 @@ public class WorkerService : IWorkerService
         worker.LastName = workerRequest.LastName;
         worker.MiddleName = workerRequest.MiddleName;
         worker.Sex = workerRequest.Sex;
-        worker.DateBithday = (DateTime)workerRequest.DateBithday;
+        worker.DateBithday = workerRequest.DateBithday;
         worker.Post = workerRequest.Post;
         worker.DriversLicense = workerRequest.DriversLicense;
 
-        _db.Workers.Update(worker);
-        _db.SaveChanges();
+        db.Workers.Update(worker);
+        await db.SaveChangesAsync();
 
         return (true, errors);
     }
@@ -86,7 +76,6 @@ public class WorkerService : IWorkerService
     private List<string> Validate(WorkerDTO entity)
     {
         var errors = new List<string>();
-        var trueAge = 5840;
 
         if (string.IsNullOrWhiteSpace(entity.FirstName))
             errors.Add("Имя пустое");
@@ -97,6 +86,7 @@ public class WorkerService : IWorkerService
         if (entity.DateBithday == default)
             errors.Add("Дефолтная дата");
 
+        var trueAge = 5840;
         var age = DateTime.Now.Subtract(entity.DateBithday);
         if (age.Days < trueAge)
             errors.Add("Нет 16 лет");

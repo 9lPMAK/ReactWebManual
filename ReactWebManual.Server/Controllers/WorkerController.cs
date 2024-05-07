@@ -2,7 +2,6 @@
 using DataModels.Models;
 using Microsoft.AspNetCore.Mvc;
 using ReactWebManual.Server.Interface;
-using ReactWebManual.Server.Servises;
 
 namespace ReactWebManual.Server.Controllers;
 
@@ -20,12 +19,12 @@ public class WorkerController : ControllerBase
     [HttpGet]
 
     public async Task<ActionResult<List<WorkerEntity>>> GetAll()
-        => Ok(_workerService.GetAll());
+        => Ok(await _workerService.GetAll());
 
     [HttpDelete("{id}")]
     public async Task<ActionResult> Remove(int id)
     {
-        var resultDelete = _workerService.Remove(id);
+        var resultDelete = await _workerService.Remove(id);
         if (!resultDelete.IsSuccess)
             return BadRequest(resultDelete);
 
@@ -38,7 +37,7 @@ public class WorkerController : ControllerBase
         if (workerRequest is null)
             return BadRequest();
 
-        var resultPost = _workerService.Add(workerRequest);
+        var resultPost = await _workerService.Add(workerRequest);
         if (!resultPost.IsSuccess)
             return BadRequest(resultPost);
 
@@ -51,7 +50,7 @@ public class WorkerController : ControllerBase
         if (workerRequest is null)
             return BadRequest();
 
-        var resultPut = _workerService.Update(workerRequest);
+        var resultPut = await _workerService.Update(workerRequest);
         if (!resultPut.IsSuccess)
             return BadRequest(resultPut);
 

@@ -2,7 +2,6 @@
 using DataModels.Models;
 using Microsoft.AspNetCore.Mvc;
 using ReactWebManual.Server.Interface;
-using ReactWebManual.Server.Servises;
 
 namespace ReactWebManual.Server.Controllers;
 
@@ -17,13 +16,13 @@ public class DivisionController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<DivisionEntity>>> GetAll()
-        => Ok(_divisionService.GetAll());
+    public async Task<ActionResult<DivisionTreeNode>> GetTree()
+        => Ok(await _divisionService.GetTree());
 
     [HttpDelete("{id}")]
     public async Task<ActionResult> Remove(int id)
     {
-        var resultDelete = _divisionService.Remove(id);
+        var resultDelete = await _divisionService.Remove(id);
         if (!resultDelete.IsSuccess)
             return BadRequest(resultDelete);
 
@@ -36,7 +35,7 @@ public class DivisionController : ControllerBase
         if (divisionRequest is null)
             return BadRequest();
 
-        var resultPost = _divisionService.Add(divisionRequest);
+        var resultPost = await _divisionService.Add(divisionRequest);
         if (!resultPost.IsSuccess)
             return BadRequest(resultPost);
 
@@ -49,7 +48,7 @@ public class DivisionController : ControllerBase
         if (divisionRequest is null)
             return BadRequest();
 
-        var resultPut = _divisionService.Update(divisionRequest);
+        var resultPut = await _divisionService.Update(divisionRequest);
         if (!resultPut.IsSuccess)
             return BadRequest(resultPut);
 

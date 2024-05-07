@@ -1,54 +1,38 @@
-import { FC, useCallback, useEffect, useId, useState } from 'react';
-import Modal from 'react-modal';
+import { FC, FormEvent, useCallback, useEffect, useId, useState, Dispatch, SetStateAction } from 'react';
 import './Workers.css';
+import { IWorker } from '../models/IWorker';
+import WorkerModal from './WorkerModal';
 
 interface IAppProps {
-
+    selectedDivisions: string | undefined// пока не понятно
 }
 
-interface IWorker {
-    id: number,
-    firstName: string,
-    lastName: string,
-    middleName: string,
-    dateBithday: number,
-    sex: string,
-    post: string,
-    driversLicense: boolean,
-}
+const Workers: FC<IAppProps> = ({ selectedDivisions }) => {
 
-const Workers: FC<IAppProps> = ({ }) => {
     const [workers, setWorkers] = useState<IWorker[]>();
+    const [currentWorker, setCurrentWorker] = useState<IWorker | null>(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const openModal = () => {
-        setModalIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalIsOpen(false)
-    };
-
-    const modalContent = (
-        <div>
-            <h2>Модалка</h2>
-            <p>текст</p>
-            <button onClick={closeModal}>Закрыть</button>
-        </div>
-    )
-
     const getWorkers = useCallback(async () => {
-        const response = await fetch('https://localhost:7226/api/Worker');
+        const response = await fetch('https://localhost:7226/api/Worker/');
 
         const data = await response.json();
         setWorkers(data);
     }, [setWorkers]);
 
-
-
     useEffect(() => {
         getWorkers();
     }, [getWorkers]);
+
+    const addWorker = useCallback(() => {
+        setCurrentWorker(null);
+        setModalIsOpen(true);
+    }, [setCurrentWorker, setModalIsOpen]);
+
+    const editWorker = useCallback((worker: IWorker) => {
+        setCurrentWorker(worker);
+        setModalIsOpen(true);
+    }, [setCurrentWorker, setModalIsOpen]);
 
     const deleteWorker = useCallback(async (id: number) => {
         const response = await fetch(`https://localhost:7226/api/Worker/${id}`, { method: 'DELETE' });
@@ -65,10 +49,8 @@ const Workers: FC<IAppProps> = ({ }) => {
         <div>
             <div className='workers'>
                 <h1 className='workers'>Работники</h1>
-                <button className='workersButton'onClick={() => openModal()}>ADD Worker</button>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-                    {modalContent}
-                </Modal>
+                <button className='workersButton' onClick={addWorker} >ADD Worker</button>
+                <WorkerModal worker={currentWorker} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
             </div>
             <table className="table table-striped" aria-labelledby="tabelLabel">
                 <thead>
@@ -94,8 +76,10 @@ const Workers: FC<IAppProps> = ({ }) => {
                             <td>{worker.post}</td>
                             <td>{worker.driversLicense ? 'Есть' : 'Нет'}</td>
                             <td>
-                                <button className='buttonDelete' onClick={() => deleteWorker(worker.id)}>X</button>
-                                <button className='buttonUpdate'></button>
+                                <div className='buttons'>
+                                    <button className='buttonDelete' onClick={() => deleteWorker(worker.id)}>X</button>
+                                    <button className='buttonUpdate' onClick={() => editWorker(worker)}></button>
+                                </div>
                             </td>
                         </tr>
                     )}

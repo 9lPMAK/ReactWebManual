@@ -39,3 +39,8 @@ th, td {
 modalContentHeader{
     display: inline;
 }
+
+.buttons{
+    display: flex;
+    justify-content: stretch;
+}

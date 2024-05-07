@@ -5,8 +5,8 @@ namespace ReactWebManual.Server.Interface;
 
 public interface IWorkerService
 {
-    public List<WorkerEntity> GetAll();
-    public (bool IsSuccess, string Error) Remove(int id);
-    public (bool IsSuccess, List<string> ErrorsList) Add(WorkerDTO workerRequest);
-    public (bool IsSuccess, List<string> ErrorsList) Update(WorkerDTO workerRequest);
+    public Task<List<WorkerEntity>> GetAll();
+    public Task<(bool IsSuccess, string? Error)> Remove(int id);
+    public Task<(bool IsSuccess, List<string> ErrorsList)> Add(WorkerDTO workerRequest);
+    public Task<(bool IsSuccess, List<string> ErrorsList)> Update(WorkerDTO workerRequest);
 }
