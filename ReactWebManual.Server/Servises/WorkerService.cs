@@ -10,8 +10,30 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
 {
     public Task<List<WorkerEntity>> GetAll() => db.Workers.ToListAsync();
 
-	public async Task<(bool, string?)> Remove(int id)
-	{
+    public async Task<List<WorkerEntity>> GetWorkers(int divisionId)
+    {
+        var division = await db.Divisions.SingleOrDefaultAsync(x => x.Id == divisionId);
+        if (division is null)
+            throw new ArgumentException($"Divisiopn by Id={divisionId} not found", nameof(divisionId));
+
+        var workers = await GetWorkersRecursion(division, []);
+        return workers;
+    }
+
+    private async Task<List<WorkerEntity>> GetWorkersRecursion(DivisionEntity division, List<WorkerEntity> allWorkers)
+    {
+        var workers = await db.Workers.Where(x => x.DivisionId == division.Id).ToListAsync();
+        allWorkers.AddRange(workers);
+
+        var childs = await db.Divisions.Where(x => x.ParentID == division.Id && x.Id != division.Id).ToListAsync();
+        foreach (var child in childs)
+            await GetWorkersRecursion(child, allWorkers);
+
+        return allWorkers;
+    }
+
+    public async Task<(bool, string?)> Remove(int id)
+    {
         var worker = await db.Workers.FirstOrDefaultAsync(d => d.Id == id);
         if (worker is null)
             return (false, "ID не найден");
@@ -37,6 +59,7 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
             DateBithday = (DateTime)workerRequest.DateBithday,
             Post = workerRequest.Post,
             DriversLicense = workerRequest.DriversLicense,
+            DivisionId = workerRequest.DivisionId,
         };
 
         db.Workers.Add(result);
@@ -66,6 +89,7 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
         worker.DateBithday = workerRequest.DateBithday;
         worker.Post = workerRequest.Post;
         worker.DriversLicense = workerRequest.DriversLicense;
+        worker.DivisionId = workerRequest.DivisionId;
 
         db.Workers.Update(worker);
         await db.SaveChangesAsync();

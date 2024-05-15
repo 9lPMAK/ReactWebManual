@@ -21,6 +21,11 @@ public class WorkerController : ControllerBase
     public async Task<ActionResult<List<WorkerEntity>>> GetAll()
         => Ok(await _workerService.GetAll());
 
+    [HttpGet("{divisionId}")]
+
+    public async Task<ActionResult<List<WorkerEntity>>> GetWorkers(int divisionId)
+        => Ok(await _workerService.GetWorkers(divisionId));
+
     [HttpDelete("{id}")]
     public async Task<ActionResult> Remove(int id)
     {

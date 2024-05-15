@@ -19,6 +19,10 @@ public class DivisionController : ControllerBase
     public async Task<ActionResult<DivisionTreeNode>> GetTree()
         => Ok(await _divisionService.GetTree());
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult<DivisionEntity>> GetDivision(int id)
+        => Ok(await _divisionService.GetDivision(id));
+
     [HttpDelete("{id}")]
     public async Task<ActionResult> Remove(int id)
     {

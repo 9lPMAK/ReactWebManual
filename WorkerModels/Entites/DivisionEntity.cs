@@ -14,5 +14,5 @@ public class DivisionEntity
     public DateTime CreateDate { get; set; } = DateTime.Now;
 
     public string Description { get; set; } = string.Empty;
-
+    
 }

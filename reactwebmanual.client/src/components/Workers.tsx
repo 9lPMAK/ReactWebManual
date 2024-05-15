@@ -4,25 +4,30 @@ import { IWorker } from '../models/IWorker';
 import WorkerModal from './WorkerModal';
 
 interface IAppProps {
-    selectedDivisions: string | undefined// пока не понятно
+    selectedDivisionId: number | undefined
 }
 
-const Workers: FC<IAppProps> = ({ selectedDivisions }) => {
+const Workers: FC<IAppProps> = ({ selectedDivisionId }) => {
 
     const [workers, setWorkers] = useState<IWorker[]>();
     const [currentWorker, setCurrentWorker] = useState<IWorker | null>(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const getWorkers = useCallback(async () => {
-        const response = await fetch('https://localhost:7226/api/Worker/');
+    const getAndFillWorkers = async (selectedDivisionId: number | undefined) => {
+        if (selectedDivisionId === undefined) {
+            setWorkers([]);
+            return;
+        }
+
+        const response = await fetch(`https://localhost:7226/api/Worker/${selectedDivisionId}`,{ method: 'GET' });
 
         const data = await response.json();
         setWorkers(data);
-    }, [setWorkers]);
+    };
 
     useEffect(() => {
-        getWorkers();
-    }, [getWorkers]);
+        getAndFillWorkers(selectedDivisionId);
+    }, [selectedDivisionId]);
 
     const addWorker = useCallback(() => {
         setCurrentWorker(null);
@@ -42,8 +47,8 @@ const Workers: FC<IAppProps> = ({ selectedDivisions }) => {
             return;
         }
 
-        await getWorkers();
-    }, [getWorkers]);
+        await getAndFillWorkers(selectedDivisionId);
+    }, [selectedDivisionId]);
 
     return (
         <div>

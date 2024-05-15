@@ -1,0 +1,45 @@
+division {
+    max-width: 1280px;
+    margin-left: 5vw;
+    padding: 2rem;
+    text-align: center;
+}
+
+th,
+td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.buttons {
+    margin: 1vw;
+    margin-left: 10vw;
+
+}
+
+.button_add {
+    background: url('../../public/plus.png');
+    background-size: 100% 100%;
+    width: 1vw;
+    height: 2vw;
+    margin-left: 1vw;
+
+}
+
+.button_edit {
+    background: url('../../public/edit.svg');
+    background-size: 100% 100%;
+    width: 1vw;
+    height: 2vw;
+    margin-left: 1vw;
+
+}
+
+.button_delete {
+    background: url('../../public/remove.svg');
+    background-size: 100% 100%;
+    width: 1vw;
+    height: 2vw;
+    margin-left: .5vw;
+
+}

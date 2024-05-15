@@ -60,6 +60,9 @@ namespace WorkerStore.DataAccess.Migrations
                     b.Property<DateTime>("DateBithday")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DivisionId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("DriversLicense")
                         .HasColumnType("bit");
 
@@ -72,6 +75,7 @@ namespace WorkerStore.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MiddleName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Post")

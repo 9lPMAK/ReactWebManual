@@ -1,23 +1,19 @@
-import { FC, useEffect, useId, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Workers from './components/Workers';
 import Divisions from './components/Divisions';
 
-interface IAppProps {
+const App = ({ }) => {
+    const [selectedDivisionId, setSelectedDivisionId] = useState<number | undefined>(undefined);
 
-}
-
-
-const App: FC<IAppProps> = ({ }) => {
-    const [selectedDivisions, setSelectedDivisions] = useState<string>(); //указать тип
-
-    return(
+    return (
         <div className='content'>
             <Divisions
-                setSelectedDivisions={setSelectedDivisions}
+                selectedDivisionId={selectedDivisionId}
+                setSelectedDivisionId={setSelectedDivisionId}
             />
             <Workers
-                selectedDivisions={selectedDivisions}
+                selectedDivisionId={selectedDivisionId}
             />
         </div>
     )

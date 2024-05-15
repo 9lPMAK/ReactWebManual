@@ -7,4 +7,5 @@ export interface IWorker {
     sex: string;
     post: string;
     driversLicense: boolean;
+    divisionId: number;
 }

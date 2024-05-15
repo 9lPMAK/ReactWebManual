@@ -13,4 +13,5 @@ public class WorkerEntity
     public string Sex { get; set; }
     public string Post { get; set; }
     public bool DriversLicense { get; set; } 
+    public int DivisionId { get; set; }
 }

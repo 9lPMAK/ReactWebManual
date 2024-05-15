@@ -12,20 +12,24 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
 
     public Task<List<DivisionEntity>> GetAll() => db.Divisions.ToListAsync();
 
+    public async Task<DivisionEntity?> GetDivision(int id) => await db.Divisions.FirstOrDefaultAsync(x => x.Id == id);
+
     public async Task<(bool, string?)> Remove(int id)
     {
+        if (id == RootDivisionId)
+            return (false, "Невозможно удалить корневое подразделение");
+
         var division = await db.Divisions.FirstOrDefaultAsync(d => d.Id == id);
         if (division is null)
             return (false, "ID не найден");
 
-        var divisionChildCollec = await db.Divisions.Where(d => d.ParentID == id).ToListAsync();
-        if (divisionChildCollec.Count == 0)
-            return (false, "Дочерние элементы не найдены");
+        // пример без использования рекурсии
+        var divisionChilds = await db.Divisions.Where(d => d.ParentID == id).ToListAsync();
 
-        for (int i = 0; i < divisionChildCollec.Count; i++)
+        for (int i = 0; i < divisionChilds.Count; i++)
         {
-            var divisionChild = divisionChildCollec[i];
-            divisionChildCollec.AddRange(await db.Divisions.Where(d => d.ParentID == divisionChild.Id).ToListAsync());
+            var divisionChild = divisionChilds[i];
+            divisionChilds.AddRange(await db.Divisions.Where(d => d.ParentID == divisionChild.Id).ToListAsync());
             db.Divisions.Remove(divisionChild);
         }
 
@@ -33,6 +37,7 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
         await db.SaveChangesAsync();
         return (true, null);
     }
+
 
     public async Task<(bool, List<string>)> Add(DivisionDTO divisionRequest)
     {
@@ -100,28 +105,29 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
             .Where(x => x.ParentID == Convert.ToInt32(rootNode.Id) && x.Id != RootDivisionId)
             .ToListAsync();
 
-        await Recursion(childs, rootNode);
+        // пример с использованием рекурсии
+        await FillTreeNodeRecursion(childs, rootNode);
         return rootNode;
     }
 
     private async Task<DivisionTreeNode> GetRootNode()
     {
         var division = await db.Divisions.FirstAsync(x => x.ParentID == RootDivisionId);
-        return new DivisionTreeNode(division.Id.ToString(),
-            division.ParentID.ToString(),
+        return new DivisionTreeNode(division.Id,
+            division.ParentID,
             division.Name,
             []);
     }
 
-    public async Task Recursion(List<DivisionEntity> divisions, DivisionTreeNode parent)
+    public async Task FillTreeNodeRecursion(List<DivisionEntity> divisions, DivisionTreeNode parent)
     {
         foreach (var division in divisions)
         {
-            var node = new DivisionTreeNode(division.Id.ToString(), division.ParentID.ToString(), division.Name, []);
+            var node = new DivisionTreeNode(division.Id, division.ParentID, division.Name, []);
             parent.Children.Add(node);
 
             var childs = await db.Divisions.Where(x => x.ParentID == division.Id).ToListAsync();
-            await Recursion(childs, node);
+            await FillTreeNodeRecursion(childs, node);
         }
     }
 }
