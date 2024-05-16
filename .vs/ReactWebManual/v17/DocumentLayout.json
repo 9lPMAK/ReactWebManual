@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\servises\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\servises\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +15,12 @@
       "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\servises\\divisionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\workerstore.dataaccess\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|solutionrelative:workerstore.dataaccess\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\servises\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\servises\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\interface\\idivisionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\interface\\idivisionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\interface\\iworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\interface\\iworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\reactwebmanual.server\\controllers\\divisioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\controllers\\divisioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17528C5F-883D-4D70-B283-04C6BBB6F778}|WorkerModels\\DataModels.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\workermodels\\models\\divisiontreenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17528C5F-883D-4D70-B283-04C6BBB6F778}|WorkerModels\\DataModels.csproj|solutionrelative:workermodels\\models\\divisiontreenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "WorkerStore.DataAccess\\DependencyInjection.cs",
-              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\DependencyInjection.cs",
-              "RelativeToolTip": "WorkerStore.DataAccess\\DependencyInjection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "IWorkerService.cs",
+              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Interface\\IWorkerService.cs",
+              "RelativeDocumentMoniker": "ReactWebManual.Server\\Interface\\IWorkerService.cs",
+              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Interface\\IWorkerService.cs",
+              "RelativeToolTip": "ReactWebManual.Server\\Interface\\IWorkerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T11:03:31.476Z"
+              "WhenOpened": "2024-05-16T07:33:47.472Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "WorkerService.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Servises\\WorkerService.cs",
               "RelativeDocumentMoniker": "ReactWebManual.Server\\Servises\\WorkerService.cs",
               "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Servises\\WorkerService.cs",
               "RelativeToolTip": "ReactWebManual.Server\\Servises\\WorkerService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA1wCAAAAAFAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAlwFsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T10:52:28.128Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WorkerController.cs",
-              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\WorkerController.cs",
-              "RelativeDocumentMoniker": "ReactWebManual.Server\\Controllers\\WorkerController.cs",
-              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\WorkerController.cs",
-              "RelativeToolTip": "ReactWebManual.Server\\Controllers\\WorkerController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwBsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T07:57:12.293Z",
+              "WhenOpened": "2024-05-15T12:23:08.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DivisionController.cs",
-              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\DivisionController.cs",
-              "RelativeDocumentMoniker": "ReactWebManual.Server\\Controllers\\DivisionController.cs",
-              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\DivisionController.cs",
-              "RelativeToolTip": "ReactWebManual.Server\\Controllers\\DivisionController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA1wBgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T07:53:23.274Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IDivisionService.cs",
-              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Interface\\IDivisionService.cs",
-              "RelativeDocumentMoniker": "ReactWebManual.Server\\Interface\\IDivisionService.cs",
-              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Interface\\IDivisionService.cs",
-              "RelativeToolTip": "ReactWebManual.Server\\Interface\\IDivisionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T07:51:52.467Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DivisionService.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Servises\\DivisionService.cs",
               "RelativeDocumentMoniker": "ReactWebManual.Server\\Servises\\DivisionService.cs",
               "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Servises\\DivisionService.cs",
               "RelativeToolTip": "ReactWebManual.Server\\Servises\\DivisionService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAgAAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T07:27:09.175Z"
+              "WhenOpened": "2024-05-15T12:23:07.445Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DivisionTreeNode.cs",
-              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerModels\\Models\\DivisionTreeNode.cs",
-              "RelativeDocumentMoniker": "WorkerModels\\Models\\DivisionTreeNode.cs",
-              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerModels\\Models\\DivisionTreeNode.cs",
-              "RelativeToolTip": "WorkerModels\\Models\\DivisionTreeNode.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAWAAAA",
+              "DocumentIndex": 1,
+              "Title": "WorkerController.cs",
+              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\WorkerController.cs",
+              "RelativeDocumentMoniker": "ReactWebManual.Server\\Controllers\\WorkerController.cs",
+              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\WorkerController.cs",
+              "RelativeToolTip": "ReactWebManual.Server\\Controllers\\WorkerController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBkAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T07:26:41.269Z"
+              "WhenOpened": "2024-05-15T12:23:03.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DivisionController.cs",
+              "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\DivisionController.cs",
+              "RelativeDocumentMoniker": "ReactWebManual.Server\\Controllers\\DivisionController.cs",
+              "ToolTip": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Controllers\\DivisionController.cs",
+              "RelativeToolTip": "ReactWebManual.Server\\Controllers\\DivisionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T12:23:02.59Z"
             }
           ]
         }

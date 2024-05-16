@@ -3,7 +3,7 @@ export interface IWorker {
     firstName: string;
     lastName: string;
     middleName: string;
-    dateBithday: number;
+    dateBithday: string;
     sex: string;
     post: string;
     driversLicense: boolean;

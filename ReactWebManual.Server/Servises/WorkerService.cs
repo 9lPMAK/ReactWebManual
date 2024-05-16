@@ -2,6 +2,7 @@
 using DataModels.Models;
 using Microsoft.EntityFrameworkCore;
 using ReactWebManual.Server.Interface;
+using System.Reflection.Metadata.Ecma335;
 using WorkerStore.DataAccess;
 
 namespace ReactWebManual.Server.Servises;
@@ -19,6 +20,8 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
         var workers = await GetWorkersRecursion(division, []);
         return workers;
     }
+
+    public Task<WorkerEntity?> GetWorker(int id) => db.Workers.FirstOrDefaultAsync(x => x.Id == id);
 
     private async Task<List<WorkerEntity>> GetWorkersRecursion(DivisionEntity division, List<WorkerEntity> allWorkers)
     {

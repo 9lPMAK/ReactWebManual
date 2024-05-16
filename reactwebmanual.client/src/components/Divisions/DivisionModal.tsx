@@ -63,6 +63,7 @@ const DivisionModal: FC<IDivisionModalProps> = ({
         }
 
         setVisible(false);
+        setDivision(undefined);
 
     }, [actionType, divisionId])
 
@@ -75,7 +76,6 @@ const DivisionModal: FC<IDivisionModalProps> = ({
         e.stopPropagation();
 
         const response = await fetch(`https://localhost:7226/api/Division`, {
-
             method: actionType == ActionType.Edit ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -84,7 +84,6 @@ const DivisionModal: FC<IDivisionModalProps> = ({
             body: JSON.stringify(division)
         });
         if (!response.ok) {
-            console.log('Не удалось добавить');
             alert('Не удалось добавить');
             return;
         }
@@ -95,14 +94,13 @@ const DivisionModal: FC<IDivisionModalProps> = ({
 
     const modalContentDiv = useMemo(() => {
 
-
         return (
             <div className='modalContent'>
                 <button className="modalContentHeaderButton" onClick={closeModal}>Закрыть</button>
                 <h2 >Добавить Подразделение</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Родительское подразделение</p>
-                    <input name='parentID'required defaultValue={division?.parentID} onChange={handleChange}></input>
+                    <input name='parentID' required defaultValue={division?.parentID} onChange={handleChange}></input>
                     <p>Название</p>
                     <input name='name' required minLength={2} defaultValue={division?.name} onChange={handleChange} />
                     <p>Описание</p>

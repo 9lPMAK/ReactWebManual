@@ -51,7 +51,7 @@ const Divisions: FC<IAppProps> = ({ selectedDivisionId, setSelectedDivisionId })
 
         const response = await fetch(`https://localhost:7226/api/Division/${selectedDivisionId}`, { method: 'DELETE' });
         if (!response.ok) {
-            console.log('Не удалось удалить');
+            alert('Не удалось удалить');
             return;
         }
 
@@ -77,6 +77,5 @@ const Divisions: FC<IAppProps> = ({ selectedDivisionId, setSelectedDivisionId })
             />
         </div>
     );
-
 };
 export default Divisions;
