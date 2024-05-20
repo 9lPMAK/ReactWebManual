@@ -96,7 +96,7 @@ const DivisionModal: FC<IDivisionModalProps> = ({
 
         return (
             <div className='modalContent'>
-                <button className="modalContentHeaderButton" onClick={closeModal}>Закрыть</button>
+                
                 <h2 >Добавить Подразделение</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Родительское подразделение</p>
@@ -105,13 +105,9 @@ const DivisionModal: FC<IDivisionModalProps> = ({
                     <input name='name' required minLength={2} defaultValue={division?.name} onChange={handleChange} />
                     <p>Описание</p>
                     <input name='description' defaultValue={division?.description} onChange={handleChange} />
-
-                    <button type='submit' className="modalContentButton">{
-                        actionType == ActionType.Edit
-                            ? 'Редактировать'
-                            : 'Добавить'
-                    }</button>
+                    <button type='submit' className="modalContentButton">Cохранить</button>
                 </form>
+                <button className="modalContentButton" onClick={closeModal}>Отмена</button>
             </div>
         );
     }, [formSubmit, division]);

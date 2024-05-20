@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { IWorker } from '../../models/IWorker';
+import {Button} from 'antd'
+import {FormOutlined , DeleteOutlined } from '@ant-design/icons';
 
 interface IAppProps {
     workers: IWorker[];
@@ -10,7 +12,7 @@ interface IAppProps {
 const WorkersTable: FC<IAppProps> = ({ workers, editWorker, deleteWorker }) => {
 
     return (
-        <table className="table table-striped" aria-labelledby="tabelLabel">
+        <table className="tableWorker table-striped" aria-labelledby="tabelLabel">
             <thead>
                 <tr>
                     <th>Имя</th>
@@ -35,8 +37,8 @@ const WorkersTable: FC<IAppProps> = ({ workers, editWorker, deleteWorker }) => {
                         <td>{worker.driversLicense ? 'Есть' : 'Нет'}</td>
                         <td>
                             <div className='buttons'>
-                                <button className='buttonUpdate' onClick={() => editWorker(worker.id)}></button>
-                                <button className='buttonDelete' onClick={() => deleteWorker(worker.id)}>X</button>
+                                <Button onClick={() => editWorker(worker.id)} icon={<FormOutlined />}/>
+                                <Button onClick={() => deleteWorker(worker.id)} icon={<DeleteOutlined />}/>
                             </div>
                         </td>
                     </tr>

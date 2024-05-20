@@ -12,6 +12,6 @@ public class WorkerEntity
     public DateTime DateBithday { get; set; }
     public string Sex { get; set; }
     public string Post { get; set; }
-    public bool DriversLicense { get; set; } 
+    public bool IsDriversLicense { get; set; } 
     public int DivisionId { get; set; }
 }

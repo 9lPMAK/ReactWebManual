@@ -4,6 +4,8 @@ import { IWorker } from '../../models/IWorker';
 import WorkerModal from './WorkerModal';
 import WorkersTable from './WorkersTable';
 import { ActionType } from '../../types/ActionType';
+import { Button } from 'antd';
+import {UserAddOutlined } from '@ant-design/icons';
 
 interface IAppProps {
     selectedDivisionId: number | undefined
@@ -59,10 +61,10 @@ const Workers: FC<IAppProps> = ({ selectedDivisionId }) => {
     };
 
     return (
-        <div>
-            <div className='workers'>
-                <h1 className='workers'>Работники</h1>
-                <button className='workersButton' onClick={addWorker} >Добавить</button>
+        <div className='workers'>
+            <div className='worker'>
+                <h1 className='workersName'>Работники</h1>
+                <Button className='workersButton' onClick={addWorker} icon={<UserAddOutlined />}/>
 
             </div>
             <WorkersTable

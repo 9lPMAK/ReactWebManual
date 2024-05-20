@@ -1,16 +1,31 @@
 table table-striped {
-    max-width: 1280px;
+    /* max-width: 1280px;
     margin-left: 50%;
     padding: 2rem;
-    text-align: center;
+    text-align: center; */
 }
 
 th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 2vw;
+    padding-right: 2vw; */
+    width: 140px;
+    /* position: sticky; */
+    
+    border: 1px solid rgb(255, 255, 255);
+    
 }
+
+.tableWorker{
+    
+}
+
 .workers{
+    margin-left: 5vw;
+}
+
+.h1.workersName{
     display: inline;
+    margin: 5vw 0; 
 }
 
 .workersButton{

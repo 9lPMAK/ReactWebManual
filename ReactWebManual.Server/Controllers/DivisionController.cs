@@ -46,6 +46,11 @@ public class DivisionController : ControllerBase
         return Ok(resultPost);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="divisionRequest"></param>
+    /// <returns></returns>
     [HttpPut]
     public async Task<ActionResult<DivisionEntity>> Update(DivisionDTO divisionRequest)
     {

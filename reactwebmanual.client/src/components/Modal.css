@@ -1,7 +1,11 @@
-.ReactModal__Content--after-open{
+.ReactModal__Content {
+    border-radius: 15px !important;
+}
 
-    width: 50vw;
-    height: 50vw;
+.ReactModal__Content--after-open{
+    width: 31vw;
+    height: max-content;
+    margin-left: 27vw;
 }
 
 .modalContentHeader{
@@ -14,18 +18,11 @@
     margin-left: 4vw;
 }
 
-.modalContentHeaderButton{
-    margin-left: 5vw;
-}
-
-.modalContentHeaderButton{
-    width: 113px;
-    height: 42px;
-    background-color: red;
+.modalContentButton{
+    margin: 1vw;
     float: right;
 }
-
-.modalContentButton{
+.modalContentButtonClose{
     margin: 1vw;
     float: right;
 }

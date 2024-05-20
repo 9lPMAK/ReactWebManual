@@ -14,6 +14,11 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
 
     public async Task<DivisionEntity?> GetDivision(int id) => await db.Divisions.FirstOrDefaultAsync(x => x.Id == id);
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     public async Task<(bool, string?)> Remove(int id)
     {
         if (id == RootDivisionId)
@@ -112,7 +117,7 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
 
     private async Task<DivisionTreeNode> GetRootNode()
     {
-        var division = await db.Divisions.FirstAsync(x => x.ParentID == RootDivisionId);
+        var division = await db.Divisions.FirstAsync(x => x.Id == RootDivisionId);
         return new DivisionTreeNode(division.Id,
             division.ParentID,
             division.Name,

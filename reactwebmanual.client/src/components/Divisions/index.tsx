@@ -3,6 +3,9 @@ import DivisionsTree from './DivisionsTree';
 import './index.css';
 import DivisionModal from './DivisionModal';
 import { ActionType } from '../../types/ActionType';
+import { Button } from 'antd';
+import {PlusSquareOutlined, FormOutlined , DeleteOutlined } from '@ant-design/icons';
+
 
 interface IAppProps {
     selectedDivisionId: number | undefined;
@@ -62,14 +65,17 @@ const Divisions: FC<IAppProps> = ({ selectedDivisionId, setSelectedDivisionId })
         <div className='division'>
             <h1>Подразделения</h1>
             <div className='buttons'>
-                <button className='button_add' onClick={() => setActionType(ActionType.Add)}></button>
-                <button className='button_edit' onClick={() => setActionType(ActionType.Edit)}></button>
-                <button className='button_delete' onClick={deleteDivision}></button>
-            </div>
-            <DivisionsTree
-                setSelectedDivisionId={setSelectedDivisionId}
-                divisions={divisions}
+                <Button onClick={() => setActionType(ActionType.Add)} icon={<PlusSquareOutlined />}/>
+                <Button onClick={() => setActionType(ActionType.Edit)} icon={<FormOutlined />}/>
+                <Button onClick={deleteDivision} icon={<DeleteOutlined />}/>
+            </div>   
+            <div className='divisionTree'>
+                <DivisionsTree               
+                    setSelectedDivisionId={setSelectedDivisionId}
+                    divisions={divisions}
             />
+            </div>
+
             <DivisionModal
                 actionType={actionType}
                 setActionType={setActionType}

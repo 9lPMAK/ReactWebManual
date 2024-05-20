@@ -1,14 +1,14 @@
 ﻿#root {
-    max-width: 1280px;
+    max-width: 100vw;
     margin-left: 5vw;
     padding: 2rem;
     text-align: center;
 }
 
-th, td {
-    padding-left: 1rem;
+/* th, td {
+    padding-left: 5rem;
     padding-right: 1rem;
-}
+} */
 
 .content {
     display: flex;

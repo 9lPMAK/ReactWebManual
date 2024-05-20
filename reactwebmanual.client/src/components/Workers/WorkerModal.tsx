@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { IWorker } from "../../models/IWorker";
 import '../Modal.css';
 import { ActionType } from "../../types/ActionType";
+import TreeSelectDivision from '../Divisions/selectDivision';
 
 interface IWorkerModalProps {
     actionType: ActionType,
@@ -17,7 +18,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     workerId,
     selectedDivisionId
 }) => {
-
+    const [value, setValue] = useState<string>();
     const [worker, setWorker] = useState<IWorker>();
     const [visible, setVisible] = useState(false);
 
@@ -27,10 +28,15 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             const data = await response.json();
             console.log('data', data);
             setWorker(data);
+            setValue(String(data.divisionId));
         } catch {
             throw Error('ошибка');
         }
     };
+
+    // useEffect(() => {
+    //     setValue(worker ? String(worker.divisionId) : String(selectedDivisionId ?? 0));
+    // }, [selectedDivisionId])
 
     useEffect(() => {
         if (actionType == ActionType.Add) {
@@ -39,7 +45,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                 firstName: '',
                 lastName: '',
                 middleName: '',
-                dateBithday: '1999-04-05T00:00:00',
+                dateBithday: '0000-00-00T00:00:00',
                 sex: '',
                 post: '',
                 driversLicense: true,
@@ -47,6 +53,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             };
 
             setWorker(newWorker);
+            setValue(String(newWorker.divisionId));
             setVisible(true);
             return;
         }
@@ -67,6 +74,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     };
 
     const formSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
+        console.log('value', value);
         e.preventDefault();
         e.stopPropagation();
 
@@ -80,7 +88,8 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             sex: e.target.elements['sex'].value,
             post: e.target.elements['post'].value,
             driversLicense: e.target.elements['driversLicense'].value === 'true',
-            divisionId: e.target.elements['divisionId'].value,
+            // divisionId: worker ? worker.divisionId : selectedDivisionId ?? 0,
+            divisionId: Number(value ?? 0),
 
         };
         console.log('e', e);
@@ -103,13 +112,11 @@ const WorkerModal: FC<IWorkerModalProps> = ({
 
         setActionType(ActionType.Refresh);
 
-    }, [worker, actionType]);
+    }, [worker, actionType, value]);
 
     const modalContent = useMemo(() => {
-        console.log('worker', worker);
         return !!worker && (
             <div className='modalContent'>
-                <button className="modalContentHeaderButton" onClick={closeModal}>Закрыть</button>
                 <h2 >Добавить работника</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Фамилия</p>
@@ -118,7 +125,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                     <input name='firstName' required minLength={2} defaultValue={worker.firstName} ></input>
                     <p>Отчество</p>
                     <input name='middleName' defaultValue={worker?.middleName} ></input>
-                    <p>Дата Рождения</p>
+                    <p>Дата Рождения(ГГГГ-ММ-ДД)</p>
                     <input name='dateBithday' required defaultValue={worker.dateBithday} ></input>
                     <p>Пол</p>
                     <select name='sex' required defaultValue={worker.sex} >
@@ -134,17 +141,15 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                         <option value="false">Нет</option>
                     </select>
                     <p>Подразделение</p>
-                    <input name="divisionId" required defaultValue={worker.divisionId}></input>
+                    {/* <input name="divisionId" required defaultValue={worker.divisionId}></input> */}
+                    <TreeSelectDivision setValue={setValue} value={value} />
 
-                    <button type='submit' className="modalContentButton">{
-                        actionType == ActionType.Edit
-                            ? 'Редактировать'
-                            : 'Добавить'
-                    }</button>
+                    <button type='submit' className="modalContentButton">Cохранить</button>
                 </form>
+                <button className="modalContentButton" onClick={closeModal}>Отмена</button>
             </div>
         );
-    }, [formSubmit, worker, actionType]);
+    }, [formSubmit, worker, actionType, value]);
 
     return (
         <Modal isOpen={visible} onRequestClose={closeModal} ariaHideApp={false}>
