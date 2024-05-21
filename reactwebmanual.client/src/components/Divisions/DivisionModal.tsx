@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { IDivision } from "../../models/IDivision";
 import '../Modal.css';
 import { ActionType } from "../../types/ActionType";
+import TreeSelectDivision from "./selectDivision";
 
 interface IDivisionModalProps {
     actionType: ActionType,
@@ -26,7 +27,20 @@ const DivisionModal: FC<IDivisionModalProps> = ({
 
             return {
                 ...prevState,
-                [e.target.name]: e.target.value
+                [e.target.name]: e.target.value,
+
+            }
+        });
+    };
+
+    const handleChangeDivisionId = (divisionId: string | undefined) => {
+        setDivision((prevState) => {
+            if (!prevState)
+                return prevState;
+
+            return {
+                ...prevState,
+                parentID: divisionId as unknown as number,
             }
         });
     };
@@ -36,6 +50,7 @@ const DivisionModal: FC<IDivisionModalProps> = ({
             const response = await fetch(`https://localhost:7226/api/Division/${id}`);
             const data = await response.json();
             setDivision(data);
+
         } catch {
             throw Error('ошибка');
         }
@@ -46,7 +61,7 @@ const DivisionModal: FC<IDivisionModalProps> = ({
         if (actionType == ActionType.Add) {
             const newDivision: IDivision = {
                 id: 0,
-                parentID: divisionId ?? 0,
+                parentID: Number(divisionId ?? 0),
                 name: '',
                 description: '',
             };
@@ -75,6 +90,8 @@ const DivisionModal: FC<IDivisionModalProps> = ({
         e.preventDefault();
         e.stopPropagation();
 
+        console.log('divisionEdit', division);
+
         const response = await fetch(`https://localhost:7226/api/Division`, {
             method: actionType == ActionType.Edit ? 'PUT' : 'POST',
             headers: {
@@ -94,17 +111,17 @@ const DivisionModal: FC<IDivisionModalProps> = ({
 
     const modalContentDiv = useMemo(() => {
 
-        return (
+        return !!division && (
             <div className='modalContent'>
-                
-                <h2 >Добавить Подразделение</h2>
+
+                <h2 >{division.id ? 'Редактирование подразделения': 'Добавить подразделение'}</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Родительское подразделение</p>
-                    <input name='parentID' required defaultValue={division?.parentID} onChange={handleChange}></input>
+                    <TreeSelectDivision onSelect={handleChangeDivisionId} value={division.parentID} />
                     <p>Название</p>
-                    <input name='name' required minLength={2} defaultValue={division?.name} onChange={handleChange} />
+                    <input name='name' required minLength={2} defaultValue={division.name} onChange={handleChange} />
                     <p>Описание</p>
-                    <input name='description' defaultValue={division?.description} onChange={handleChange} />
+                    <input name='description' defaultValue={division.description} onChange={handleChange} />
                     <button type='submit' className="modalContentButton">Cохранить</button>
                 </form>
                 <button className="modalContentButton" onClick={closeModal}>Отмена</button>

@@ -28,15 +28,22 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             const data = await response.json();
             console.log('data', data);
             setWorker(data);
-            setValue(String(data.divisionId));
         } catch {
             throw Error('ошибка');
         }
     };
 
-    // useEffect(() => {
-    //     setValue(worker ? String(worker.divisionId) : String(selectedDivisionId ?? 0));
-    // }, [selectedDivisionId])
+    const handleChangeDivisionId = (divisionId: string | undefined) => {
+        setWorker((prevState) => {
+            if (!prevState)
+                return prevState;
+            console.log("worker", worker);
+            return {
+                ...prevState,
+                divisionId: divisionId as unknown as number,
+            }
+        });
+    };
 
     useEffect(() => {
         if (actionType == ActionType.Add) {
@@ -74,7 +81,6 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     };
 
     const formSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
-        console.log('value', value);
         e.preventDefault();
         e.stopPropagation();
 
@@ -88,9 +94,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             sex: e.target.elements['sex'].value,
             post: e.target.elements['post'].value,
             driversLicense: e.target.elements['driversLicense'].value === 'true',
-            // divisionId: worker ? worker.divisionId : selectedDivisionId ?? 0,
-            divisionId: Number(value ?? 0),
-
+            divisionId: Number(worker?.divisionId),
         };
         console.log('e', e);
         console.log('worker', newWorker);
@@ -117,7 +121,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     const modalContent = useMemo(() => {
         return !!worker && (
             <div className='modalContent'>
-                <h2 >Добавить работника</h2>
+                <h2 >{worker.id ? 'Редактирование работника': 'Добавить работника' }</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Фамилия</p>
                     <input name='lastName' required minLength={2} defaultValue={worker.lastName} ></input>
@@ -141,8 +145,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                         <option value="false">Нет</option>
                     </select>
                     <p>Подразделение</p>
-                    {/* <input name="divisionId" required defaultValue={worker.divisionId}></input> */}
-                    <TreeSelectDivision setValue={setValue} value={value} />
+                    <TreeSelectDivision onSelect={handleChangeDivisionId} value={worker.divisionId} />
 
                     <button type='submit' className="modalContentButton">Cохранить</button>
                 </form>
