@@ -15,14 +15,29 @@ public class DivisionController : ControllerBase
         _divisionService = divisionservice;
     }
 
+    /// <summary>
+    /// Возвращает дерево всех подразделений
+    /// </summary>
+    /// <returns></returns>
     [HttpGet]
     public async Task<ActionResult<DivisionTreeNode>> GetTree()
         => Ok(await _divisionService.GetTree());
 
+
+    /// <summary>
+    /// Возвращает подразделение по идентификатору
+    /// </summary>
+    /// <param name="id">Идентификатор подразделения</param>
+    /// <returns></returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<DivisionEntity>> GetDivision(int id)
         => Ok(await _divisionService.GetDivision(id));
 
+    /// <summary>
+    /// Удаляет подразделение и его детей
+    /// </summary>
+    /// <param name="id">Идентификатор подразделения</param>
+    /// <returns></returns>
     [HttpDelete("{id}")]
     public async Task<ActionResult> Remove(int id)
     {
@@ -32,7 +47,11 @@ public class DivisionController : ControllerBase
 
         return Ok(resultDelete);
     }
-
+    /// <summary>
+    /// Добавляет новое подразделение
+    /// </summary>
+    /// <param name="divisionRequest">Транспортировочная модель подразделения</param>
+    /// <returns></returns>
     [HttpPost]
     public async Task<ActionResult<DivisionEntity>> Add(DivisionDTO divisionRequest)
     {
@@ -47,9 +66,9 @@ public class DivisionController : ControllerBase
     }
 
     /// <summary>
-    /// 
+    /// Редактирует существующее подразделение
     /// </summary>
-    /// <param name="divisionRequest"></param>
+    /// <param name="divisionRequest">Транспортировочная модель подразделения</param>
     /// <returns></returns>
     [HttpPut]
     public async Task<ActionResult<DivisionEntity>> Update(DivisionDTO divisionRequest)

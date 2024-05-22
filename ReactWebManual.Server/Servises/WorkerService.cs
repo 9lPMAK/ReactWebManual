@@ -58,10 +58,10 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
             FirstName = workerRequest.FirstName,
             LastName = workerRequest.LastName,
             MiddleName = workerRequest.MiddleName,
-            Sex = workerRequest.Sex,
+            Gender = (DataModels.Enums.Gender)workerRequest.Gender,
             DateBithday = (DateTime)workerRequest.DateBithday,
             Post = workerRequest.Post,
-            DriversLicense = workerRequest.DriversLicense,
+            IsDriversLicense = workerRequest.IsDriversLicense,
             DivisionId = workerRequest.DivisionId,
         };
 
@@ -88,10 +88,10 @@ public class WorkerService(WorkerStoreDbContext db) : IWorkerService
         worker.FirstName = workerRequest.FirstName;
         worker.LastName = workerRequest.LastName;
         worker.MiddleName = workerRequest.MiddleName;
-        worker.Sex = workerRequest.Sex;
+        worker.Gender = (DataModels.Enums.Gender)workerRequest.Gender;
         worker.DateBithday = workerRequest.DateBithday;
         worker.Post = workerRequest.Post;
-        worker.DriversLicense = workerRequest.DriversLicense;
+        worker.IsDriversLicense = workerRequest.IsDriversLicense;
         worker.DivisionId = workerRequest.DivisionId;
 
         db.Workers.Update(worker);

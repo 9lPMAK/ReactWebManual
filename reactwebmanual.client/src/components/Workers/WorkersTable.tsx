@@ -32,9 +32,9 @@ const WorkersTable: FC<IAppProps> = ({ workers, editWorker, deleteWorker }) => {
                         <td>{worker.lastName}</td>
                         <td>{worker.middleName}</td>
                         <td>{worker.dateBithday}</td>
-                        <td>{worker.sex}</td>
+                        <td>{worker.gender == 0? 'муж':'жен'}</td>
                         <td>{worker.post}</td>
-                        <td>{worker.driversLicense ? 'Есть' : 'Нет'}</td>
+                        <td>{worker.isDriversLicense ? 'Есть' : 'Нет'}</td>
                         <td>
                             <div className='buttons'>
                                 <Button onClick={() => editWorker(worker.id)} icon={<FormOutlined />}/>

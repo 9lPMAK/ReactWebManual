@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ReactWebManual.Server.Interface;
 using ReactWebManual.Server.Servises;
 using WorkerStore.DataAccess;
+using WorkerStore.DataAccess.Extantions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddTransient<IWorkerService, WorkerService>();
 
 
 var app = builder.Build();
+
+app.AplayMigrations();
 
 app.UseCors(x => x
     .AllowAnyMethod()
@@ -40,11 +43,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapFallbackToFile("/index.html");
-
-using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())
-{
-    var context = serviceScope.ServiceProvider.GetRequiredService<WorkerStoreDbContext>();
-    context.Database.Migrate();
-}
 
 app.Run();

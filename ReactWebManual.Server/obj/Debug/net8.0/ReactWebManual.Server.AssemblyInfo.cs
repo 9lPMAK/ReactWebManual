@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReactWebManual.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17629b8f6378a0d3962eb36e3676644fdf04fc39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+343f6d2620ef8d4cf2aa1a8087bb1632de855dc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReactWebManual.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReactWebManual.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

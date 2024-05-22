@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "HwAfPWvPxqNcvQfImXmvHxZYyRcauyHiFHF8C5a34a8Z8unOTTEHlXF9RPytPKgOCs8+zF7pP7ebtft38jgTpA==",
+  "dgSpecHash": "CAXOvufSD4SuPKP7vwt5XPgJAyaKxFZxseE0NpWNbL0cLOx3seE3dMNWrIp50375oOKjpwyNEoolLl75AZ7t3Q==",
   "success": true,
   "projectFilePath": "C:\\Romka\\Программирование\\testcifra\\ReactWebManual\\ReactWebManual.Server\\ReactWebManual.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NewGS\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.4\\microsoft.aspnetcore.spaproxy.8.0.4.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.5\\microsoft.aspnetcore.spaproxy.8.0.5.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

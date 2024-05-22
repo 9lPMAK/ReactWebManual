@@ -14,11 +14,6 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
 
     public async Task<DivisionEntity?> GetDivision(int id) => await db.Divisions.FirstOrDefaultAsync(x => x.Id == id);
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
     public async Task<(bool, string?)> Remove(int id)
     {
         if (id == RootDivisionId)
@@ -87,7 +82,11 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
 
         return (true, errors);
     }
-
+    /// <summary>
+    /// Валидация подразделения
+    /// </summary>
+    /// <param name="entity">модель подразделения</param>
+    /// <returns></returns>
     private async Task<List<string>> Validate(DivisionDTO entity)
     {
         var errors = new List<string>();
@@ -123,7 +122,12 @@ public class DivisionService(WorkerStoreDbContext db) : IDivisionService
             division.Name,
             []);
     }
-
+    /// <summary>
+    /// Возвращает рекурсию узлов заполнения дерева подразделений
+    /// </summary>
+    /// <param name="divisions">Модель подразделения</param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
     public async Task FillTreeNodeRecursion(List<DivisionEntity> divisions, DivisionTreeNode parent)
     {
         foreach (var division in divisions)

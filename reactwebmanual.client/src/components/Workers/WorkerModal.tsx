@@ -52,10 +52,10 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                 firstName: '',
                 lastName: '',
                 middleName: '',
-                dateBithday: '0000-00-00T00:00:00',
-                sex: '',
+                dateBithday: '',
+                gender: NaN,
                 post: '',
-                driversLicense: true,
+                isDriversLicense: true,
                 divisionId: selectedDivisionId ?? 0,
             };
 
@@ -91,9 +91,9 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             firstName: e.target.elements['firstName'].value,
             middleName: e.target.elements['middleName'].value,
             dateBithday: e.target.elements['dateBithday'].value,
-            sex: e.target.elements['sex'].value,
+            gender: e.target.elements['gender'].value,
             post: e.target.elements['post'].value,
-            driversLicense: e.target.elements['driversLicense'].value === 'true',
+            isDriversLicense: e.target.elements['isDriversLicense'].value === 'true',
             divisionId: Number(worker?.divisionId),
         };
         console.log('e', e);
@@ -132,15 +132,15 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                     <p>Дата Рождения(ГГГГ-ММ-ДД)</p>
                     <input name='dateBithday' required defaultValue={worker.dateBithday} ></input>
                     <p>Пол</p>
-                    <select name='sex' required defaultValue={worker.sex} >
+                    <select name='gender' required defaultValue={worker.gender} >
                         <option value=''></option>
-                        <option value='муж'>Муж</option>
-                        <option value='жен'>Жен</option>
+                        <option value='0' >Муж</option>
+                        <option value='1'>Жен</option>
                     </select>
                     <p>Должность</p>
                     <input name='post' required defaultValue={worker.post} ></input>
                     <p>Наличие прав</p>
-                    <select name='driversLicense' required defaultValue={String(worker.driversLicense)}>
+                    <select name='isDriversLicense' required defaultValue={String(worker.isDriversLicense)}>
                         <option value="true">Есть</option>
                         <option value="false">Нет</option>
                     </select>

@@ -4,8 +4,8 @@ export interface IWorker {
     lastName: string;
     middleName: string;
     dateBithday: string;
-    sex: string;
+    gender: number;
     post: string;
-    driversLicense: boolean;
+    isDriversLicense: boolean;
     divisionId: number;
 }

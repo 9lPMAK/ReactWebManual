@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "k0HJQtVcldOveRrXqxAP5X0ZWYIrE3BWi41onCmBlXoDEWIxf3DBTae2KEVDM7a0WjPP9A/Xt+XFAW2PR5F6tw==",
+  "dgSpecHash": "P1gPSgQNThfJrQ9+mymkUzbKfClgL/xLmgNMlHHuKF6mHZj1IZvWnMhNKVd8Pd8wl/OcRa5mXixZIL8O8ms4hw==",
   "success": true,
   "projectFilePath": "C:\\Romka\\Программирование\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NewGS\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\NewGS\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",
