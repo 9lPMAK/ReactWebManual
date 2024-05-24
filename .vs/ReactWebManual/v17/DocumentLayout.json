@@ -47,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{17528C5F-883D-4D70-B283-04C6BBB6F778}|WorkerModels\\DataModels.csproj|solutionrelative:workermodels\\entites\\divisionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\Migrations\\20240522102854_changeIsDriversLicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WorkerStore.DataAccess\\Migrations\\20240522102854_changeIsDriversLicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\workerstore.dataaccess\\workerstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|solutionrelative:workerstore.dataaccess\\workerstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -67,8 +63,12 @@
       "RelativeMoniker": "D:0:0:{9DD77818-6BCC-4090-9271-DB7BA0C1A515}|ReactWebManual.Server\\ReactWebManual.Server.csproj|solutionrelative:reactwebmanual.server\\interface\\idivisionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\Migrations\\20240522062056_newContextDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WorkerStore.DataAccess\\Migrations\\20240522062056_newContextDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\workerstore.dataaccess\\migrations\\20240522102854_changeisdriverslicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|solutionrelative:workerstore.dataaccess\\migrations\\20240522102854_changeisdriverslicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|c:\\romka\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\reactwebmanual\\workerstore.dataaccess\\migrations\\20240522062056_newcontextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893BB498-AA24-4AE0-B93C-C031C7AEE07B}|WorkerStore.DataAccess\\WorkerStore.DataAccess.csproj|solutionrelative:workerstore.dataaccess\\migrations\\20240522062056_newcontextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,8 +90,7 @@
               "RelativeToolTip": "WorkerModels\\Models\\WorkerDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAACbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:43:59.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:43:59.214Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "WorkerModels\\Models\\DivisionTreeNode.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:38:00.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:38:00.585Z"
             },
             {
               "$type": "Document",
@@ -129,8 +127,7 @@
               "RelativeToolTip": "ReactWebManual.Server\\Controllers\\WorkerController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T12:23:03.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T12:23:03.599Z"
             },
             {
               "$type": "Document",
@@ -142,8 +139,7 @@
               "RelativeToolTip": "ReactWebManual.Server\\Interface\\IWorkerService.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAgwDAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T07:33:47.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T07:33:47.472Z"
             },
             {
               "$type": "Document",
@@ -155,8 +151,7 @@
               "RelativeToolTip": "ReactWebManual.Server\\Servises\\DivisionService.cs",
               "ViewState": "AQIAAHkAAAAAAAAAAADwv30AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T12:23:07.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T12:23:07.445Z"
             },
             {
               "$type": "Document",
@@ -168,8 +163,7 @@
               "RelativeToolTip": "ReactWebManual.Server\\Servises\\WorkerService.cs",
               "ViewState": "AQIAAF4AAAAAAAAAAAAwwF0AAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T12:23:08.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T12:23:08.302Z"
             },
             {
               "$type": "Document",
@@ -181,8 +175,7 @@
               "RelativeToolTip": "WorkerModels\\Models\\DivisionsDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:38:01.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:38:01.649Z"
             },
             {
               "$type": "Document",
@@ -194,12 +187,11 @@
               "RelativeToolTip": "WorkerModels\\Entites\\WorkerEntity.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAowDAAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:38:17.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:38:17.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "20240522102854_changeIsDriversLicense.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\Migrations\\20240522102854_changeIsDriversLicense.cs",
               "RelativeDocumentMoniker": "WorkerStore.DataAccess\\Migrations\\20240522102854_changeIsDriversLicense.cs",
@@ -207,8 +199,7 @@
               "RelativeToolTip": "WorkerStore.DataAccess\\Migrations\\20240522102854_changeIsDriversLicense.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:28:55.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T10:28:55.125Z"
             },
             {
               "$type": "Document",
@@ -220,12 +211,11 @@
               "RelativeToolTip": "WorkerModels\\Enums\\Gender.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:43:57.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T10:43:57.409Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "WorkerStoreDbContext.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\WorkerStoreDbContext.cs",
               "RelativeDocumentMoniker": "WorkerStore.DataAccess\\WorkerStoreDbContext.cs",
@@ -233,8 +223,7 @@
               "RelativeToolTip": "WorkerStore.DataAccess\\WorkerStoreDbContext.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAzwAsAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:37:45.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:37:45.544Z"
             },
             {
               "$type": "Document",
@@ -246,12 +235,11 @@
               "RelativeToolTip": "WorkerModels\\Entites\\DivisionEntity.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAzwA0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:38:10.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:38:10.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\WorkerStore.DataAccess\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "WorkerStore.DataAccess\\DependencyInjection.cs",
@@ -259,12 +247,11 @@
               "RelativeToolTip": "WorkerStore.DataAccess\\DependencyInjection.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:37:47.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:37:47.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Program.cs",
               "RelativeDocumentMoniker": "ReactWebManual.Server\\Program.cs",
@@ -272,12 +259,11 @@
               "RelativeToolTip": "ReactWebManual.Server\\Program.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAAABUAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T11:37:53.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T11:37:53.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "IDivisionService.cs",
               "DocumentMoniker": "C:\\Romka\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\testcifra\\ReactWebManual\\ReactWebManual.Server\\Interface\\IDivisionService.cs",
               "RelativeDocumentMoniker": "ReactWebManual.Server\\Interface\\IDivisionService.cs",
@@ -285,8 +271,7 @@
               "RelativeToolTip": "ReactWebManual.Server\\Interface\\IDivisionService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T12:25:43.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T12:25:43.345Z"
             },
             {
               "$type": "Document",
@@ -298,8 +283,7 @@
               "RelativeToolTip": "WorkerStore.DataAccess\\Migrations\\20240522062056_newContextDB.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T06:20:56.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T06:20:56.84Z"
             }
           ]
         }

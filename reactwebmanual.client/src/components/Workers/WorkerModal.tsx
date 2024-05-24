@@ -4,6 +4,10 @@ import { IWorker } from "../../models/IWorker";
 import '../Modal.css';
 import { ActionType } from "../../types/ActionType";
 import TreeSelectDivision from '../Divisions/selectDivision';
+import { DatePicker, DatePickerProps } from 'antd';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
 
 interface IWorkerModalProps {
     actionType: ActionType,
@@ -21,23 +25,31 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     const [value, setValue] = useState<string>();
     const [worker, setWorker] = useState<IWorker>();
     const [visible, setVisible] = useState(false);
+    const [datee, setDatee] = useState<string | string[]>('');
+
+    dayjs.extend(customParseFormat);
+
+    const dateFormat = 'YYYY-MM-DD';
+
 
     const getAndSetWorkerById = async (id: number) => {
         try {
             const response = await fetch(`https://localhost:7226/api/Worker/${id}`);
             const data = await response.json();
-            console.log('data', data);
             setWorker(data);
         } catch {
             throw Error('ошибка');
         }
     };
 
+    const handleChangeDateBithday: DatePickerProps['onChange'] = (date, dateString) => {
+        setDatee(dateString);
+    };
+
     const handleChangeDivisionId = (divisionId: string | undefined) => {
         setWorker((prevState) => {
             if (!prevState)
                 return prevState;
-            console.log("worker", worker);
             return {
                 ...prevState,
                 divisionId: divisionId as unknown as number,
@@ -52,7 +64,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                 firstName: '',
                 lastName: '',
                 middleName: '',
-                dateBithday: '',
+                dateBithday: '2000-01-01',
                 gender: NaN,
                 post: '',
                 isDriversLicense: true,
@@ -96,9 +108,6 @@ const WorkerModal: FC<IWorkerModalProps> = ({
             isDriversLicense: e.target.elements['isDriversLicense'].value === 'true',
             divisionId: Number(worker?.divisionId),
         };
-        console.log('e', e);
-        console.log('worker', newWorker);
-
 
         const response = await fetch(`https://localhost:7226/api/Worker`, {
 
@@ -121,7 +130,7 @@ const WorkerModal: FC<IWorkerModalProps> = ({
     const modalContent = useMemo(() => {
         return !!worker && (
             <div className='modalContent'>
-                <h2 >{worker.id ? 'Редактирование работника': 'Добавить работника' }</h2>
+                <h2 >{worker.id ? 'Редактирование работника' : 'Добавить работника'}</h2>
                 <form className="modalContentForm" onSubmit={formSubmit}>
                     <p>Фамилия</p>
                     <input name='lastName' required minLength={2} defaultValue={worker.lastName} ></input>
@@ -130,7 +139,12 @@ const WorkerModal: FC<IWorkerModalProps> = ({
                     <p>Отчество</p>
                     <input name='middleName' defaultValue={worker?.middleName} ></input>
                     <p>Дата Рождения(ГГГГ-ММ-ДД)</p>
-                    <input name='dateBithday' required defaultValue={worker.dateBithday} ></input>
+                    {/* <input name='dateBithday' required defaultValue={worker.dateBithday} ></input> */}
+                    <DatePicker
+                        name='dateBithday'
+                        defaultValue={dayjs(String(worker.dateBithday), dateFormat)}
+                        onChange={handleChangeDateBithday}
+                    />
                     <p>Пол</p>
                     <select name='gender' required defaultValue={worker.gender} >
                         <option value=''></option>
